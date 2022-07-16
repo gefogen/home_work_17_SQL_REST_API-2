@@ -3,7 +3,7 @@ from flask import request
 from models import Director, DirectorSchema
 from setup_db import db
 
-api = Namespace('genres')
+api = Namespace('directors')
 
 director_schema = DirectorSchema()
 directors_schema = DirectorSchema(many=True)

@@ -12,7 +12,7 @@ app.config['JSON_AS_ASCII'] = False
 app.config['RESTX_JSON'] = {'ensure_ascii': False}
 
 db.init_app(app)
-api.init(app)
+api.init_app(app)
 
 
 if __name__ == '__main__':
