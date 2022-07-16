@@ -1,6 +1,6 @@
 from flask_restx import Api, Namespace, Resource, fields
 from flask import request
-from models import Director, DirectorSchema
+from create_data import Director, DirectorSchema
 from setup_db import db
 
 api = Namespace('directors')
