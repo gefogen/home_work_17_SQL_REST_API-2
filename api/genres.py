@@ -9,19 +9,8 @@ genre_schema = GenreSchema()
 genres_schema = GenreSchema(many=True)
 
 @api.route("/")
-class MoviesView(Resource):
+class GenresView(Resource):
     def get(self):
-        director_id = request.args.get("director_id", type=int)
-        genre_id = request.args.get("genre_id", type=int)
-
-        if director_id:
-            movies = Genre.query.filter(Genre.director_id == director_id)
-            return genres_schema.dump(movies), 200
-
-        if genre_id:
-            genres = Genre.query.filter(Genre.genre_id == genre_id)
-            return genres_schema.dump(genres), 200
-
         movies = Genre.query.all()
         return genres_schema.dump(movies), 200
 
@@ -35,7 +24,7 @@ class MoviesView(Resource):
 
 
 @api.route("/<int:pk>")
-class MovieView(Resource):
+class GenreView(Resource):
     def get(self, pk):
         movie = Genre.query.get(pk)
         return genre_schema.dump(movie), 200
